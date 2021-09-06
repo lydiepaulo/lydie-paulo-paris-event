@@ -1,0 +1,27 @@
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    margin-top: 5px;
+    border: none;
+    border-bottom: 1px solid var(--blanc_30);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+}
