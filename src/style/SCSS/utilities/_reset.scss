@@ -9,7 +9,14 @@
 hr {
     margin-top: 5px;
     border: none;
-    border-bottom: 1px solid var(--blanc_30);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: inherit;
+    font-size: inherit;
 }
 
 a {
@@ -24,4 +31,17 @@ img {
 
 ul {
     list-style-type: none;
+}
+
+input,
+button {
+    background-color: inherit;
+    border: inherit;
+    color: inherit;
+    font-family: inherit;
+    outline: none;
+}
+
+button {
+    cursor: pointer;
 }

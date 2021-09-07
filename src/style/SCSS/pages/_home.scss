@@ -1,0 +1,20 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: $base-1;
+}
+
+.home {
+    &::before {
+        width: 40vw;
+        backdrop-filter: blur(5px);
+    }
+
+    .title-logo {
+        margin-left: -12px;
+    }
+
+    h2 {
+        max-width: 30vw;
+    }
+}

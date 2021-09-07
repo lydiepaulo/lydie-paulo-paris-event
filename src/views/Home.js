@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
+import Border from '../components/Border';
 /* import EventService from '../services/EventService'; */
 
 const Home = () => {
@@ -15,15 +16,15 @@ const Home = () => {
     }, []); */
 
     return (
-        <div>
+        <div class="pages-background home">
             <Navbar />
-            <h1>Bienvenue sur Paris Events</h1>
-            <p>L'application qui permet de chercher en direct les prochains évènements parisiens</p>
+            <main class="home-main">
+                <h1 class="title-large">Bienvenue sur<span class="title-logo">Paris Events</span></h1>
+                <h2>L'application qui permet de chercher en direct les prochains évènements parisiens</h2>
 
-            <h2>Actualité</h2>
-            <p>Le dernier évènement publié</p>
-
-
+                <h3 class="title-medium">Dernier évènement publié :</h3>
+            </main>
+            <Border />
         </div>
     )
 }

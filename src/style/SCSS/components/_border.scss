@@ -1,0 +1,35 @@
+.border {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    z-index: 2;
+
+    &>div {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    &-right,
+    &-bottom,
+    &-left {
+        background-color: rgba($base-1, .2);
+    }
+
+    &-right,
+    &-left {
+        width: 1px;
+        height: 100vh;
+        margin: 0 9vw;
+    }
+
+    &-right {
+        justify-self: end;
+    }
+
+    &-bottom {
+        align-self: end;
+        margin-bottom: 9vw;
+        width: 100vw;
+        height: 1px;
+    }
+}

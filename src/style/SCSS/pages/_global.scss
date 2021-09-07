@@ -1,0 +1,49 @@
+.pages-background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../../assets/homepage-paris.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    box-shadow: inset 0 100px 160px -100px $base-2;
+    display: grid;
+    grid-template: 1fr / 1fr;
+
+    &::before {
+        content: '';
+        grid-row: 1;
+        grid-column: 1;
+        display: block;
+        height: 100vh;
+        background-color: rgba($base-2, .35);
+        z-index: 1;
+    }
+}
+
+main {
+    grid-row: 1;
+    grid-column: 1;
+    width: 100vw;
+    height: 100vh;
+    padding: 120px 7.5vw 7.5vw;
+    z-index: 3;
+    overflow: auto;
+}
+
+input,
+button {
+    height: 56px;
+    padding: 0 20px;
+}
+
+input {
+    color: $base-3;
+    width: 230px;
+    background-color: $base-1;
+}
+
+button {
+    color: $base-1;
+    background-color: $secondary;
+    font-weight: 600;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import './SCSS/App.scss';
+import './style/CSS/App.css';
 import Home from './views/Home';
 import Search from './views/Search';
 import Event from './views/Event';
