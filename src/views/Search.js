@@ -14,7 +14,7 @@ const Search = () => {
         if (searchValue) {
             console.log(searchValue);
 
-            EventService.fetchAll(searchValue)
+            EventService.fetchAll('title', 15, searchValue)
                 .then((apiResult) => {
                     setEventData(apiResult);
                     console.log(apiResult);
@@ -28,23 +28,25 @@ const Search = () => {
     }
 
     return (
-        <div class="pages-background search">
+        <div className="pages-background search">
             <Navbar />
-            <main class="search-main">
-                <h1 class="title-large">Les évènements<span class="title-logo">À venir</span></h1>
+            <main className="search-main">
+                <h1 className="title-large">Les évènements<span className="title-logo">À venir</span></h1>
                 <span id="search-bar_container">
                     <input type="text" ref={inputRef} placeholder="Intitulé de l'évènement" id="search-bar" />
                 </span>
                 <button onClick={changeSearchValue}>Rechercher</button>
-                <div class="card-container">
-                    {errorMessage && <h2>Résultats de la recherche</h2>}
-                    {/* {errorMessage || filteredPeople && <h2>Résultats de la recherche</h2>} */}
-                    {errorMessage && <p className='error'>{errorMessage}</p>}
-                    {eventData &&
-                        eventData.map((event) => (
-                            <Card key={event.record.id} id={event.record.id} fields={event.record.fields} />
+
+                <div className="results">{eventData && <h2 className="title-medium">Résultats de la recherche</h2>}
+
+                    <div className="card-container">
+                        {/* {errorMessage || eventData && <h2>Résultats de la recherche</h2>} */}
+                        {errorMessage && <p className='error'>{errorMessage}</p>}
+                        {eventData &&
+                            eventData.map((event) => (
+                                <Card key={event.record.id} id={event.record.id} fields={event.record.fields} />
                         ))}
-                </div>
+                    </div></div>
             </main>
             <Border />
         </div>

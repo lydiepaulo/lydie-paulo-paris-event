@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 
 const Card = ({ id, fields }) => {
     return (
-        <figure class="card">
+        <figure className="card">
             <figcaption>
                 <Link to={{ pathname: "/event", search: `${id}` }}>
-                    <h3 class="title-small">{fields.title}</h3>
+                    <h3 className="title-small">{fields.title}</h3>
                 </Link>
                 <span>{fields.date_start}</span>
-                <p class="card-description">{fields.lead_text}</p>
+                <p className="card-description">{fields.lead_text}</p>
             </figcaption>
             <Link to={{ pathname: "/event", search: `${id}` }}>
                 <img src={fields.cover_url} alt="Couverture" />

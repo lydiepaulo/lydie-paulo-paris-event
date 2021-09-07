@@ -5,9 +5,8 @@ body {
 }
 
 .home {
-    &::before {
-        width: 40vw;
-        backdrop-filter: blur(5px);
+    &-main {
+        display: grid;
     }
 
     .title-logo {
@@ -17,4 +16,56 @@ body {
     h2 {
         max-width: 30vw;
     }
+
+    .card {
+        display: grid;
+        align-items: center;
+        width: 500px;
+        margin-left: auto;
+
+        &>* {
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        figcaption,
+        img {
+            width: 500px;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        img {
+            box-shadow: 0 0 20px rgba($base-3, .5);
+        }
+
+        figcaption {
+            display: grid;
+            align-items: center;
+            z-index: 1;
+            text-align: right;
+            background-color: rgba($primary, .7);
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            transition: all .3s;
+
+            &:hover {
+                backdrop-filter: blur(1px);
+            }
+
+            .card-description {
+                display: -webkit-box;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.flex {
+    align-self: end;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

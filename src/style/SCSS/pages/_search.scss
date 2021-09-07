@@ -1,5 +1,16 @@
 .search {
-    &::before {
+    &.pages-background::before {
+        animation: page-search .3s ease forwards;
+    }
+}
+
+@keyframes page-search {
+    from {
+        width: 40vw;
+        backdrop-filter: blur(5px);
+    }
+
+    to {
         width: 100vw;
         backdrop-filter: blur(15px);
     }

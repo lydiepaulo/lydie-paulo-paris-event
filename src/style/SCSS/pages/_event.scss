@@ -1,0 +1,17 @@
+.event {
+    &.pages-background::before {
+        animation: page-home .3s ease forwards;
+    }
+
+    @keyframes page-home {
+        from {
+            width: 100vw;
+            backdrop-filter: blur(15px);
+        }
+
+        to {
+            width: 40vw;
+            backdrop-filter: blur(5px);
+        }
+    }
+}

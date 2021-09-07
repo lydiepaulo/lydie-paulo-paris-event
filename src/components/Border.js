@@ -2,10 +2,10 @@ import React from 'react';
 
 const Border = () => {
     return (
-        <div class="border">
-            <div class="border-right"></div>
-            <div class="border-bottom"></div>
-            <div class="border-left"></div>
+        <div className="border">
+            <div className="border-right"></div>
+            <div className="border-bottom"></div>
+            <div className="border-left"></div>
         </div>
     );
 };

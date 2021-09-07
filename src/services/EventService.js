@@ -4,9 +4,16 @@ const API_CALL = 'https://opendata.paris.fr/api/v2/catalog/datasets/que-faire-a-
 
 const EventService = {
     // Récupérer le tableau des collaborateur depuis le serveur
-    fetchAll(mySearch) {
+    fetchAll(sortValue, limitValue, searchValue) {
+        
+        let url = `${API_CALL}?sort=${sortValue}&limit=${limitValue}`;
+
+        if (searchValue) {
+            url += `&search=${searchValue}`;
+        }
+
         return axios
-            .get(`${API_CALL}?search=${mySearch}&sort=title`)
+            .get(url)
             .then((response) => response.data.records)
             .catch(errorHandler);
     },
