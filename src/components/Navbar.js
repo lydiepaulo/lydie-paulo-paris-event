@@ -7,10 +7,10 @@ const Navbar = () => {
       <ul className="nav-bar">
         <li className="nav-bar__home">
           <NavLink exact to="/">Accueil</NavLink>
-          </li>
+        </li>
         <li>
           <NavLink exact to="/search" activeClassName="nav-bar__active">Rechercher</NavLink>
-          </li>
+        </li>
         <li>
           <NavLink exact to="/favorites" activeClassName="nav-bar__active">Favoris</NavLink>
         </li>

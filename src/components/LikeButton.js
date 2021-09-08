@@ -1,9 +1,11 @@
 import React from 'react';
+import { FaHeart, /* FaRegHeart */ } from "react-icons/fa";
 
 const LikeButton = () => {
     return (
-        <div>
-            
+        <div className="card__like-button">
+            <FaHeart />
+            {/* {&& <FaRegHeart />} */}
         </div>
     );
 };

@@ -1,15 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LikeButton from './LikeButton';
+import GlobalFunctions from '../services/GlobalFunctions';
 
 const Card = ({ id, fields }) => {
+    const eventDate = fields.date_start;
+
     return (
         <figure className="card">
             <figcaption>
                 <Link to={{ pathname: "/event", search: `${id}` }}>
                     <h3 className="title-small">{fields.title}</h3>
                 </Link>
-                <span>{fields.date_start}</span>
-                <p className="card-description">{fields.lead_text}</p>
+                <div className="flex">
+                    <LikeButton />
+                    {GlobalFunctions.formatDate(eventDate)}
+                </div>
+                <p className="card-description">
+                    {fields.lead_text}
+                </p>
             </figcaption>
             <Link to={{ pathname: "/event", search: `${id}` }}>
                 <img src={fields.cover_url} alt="Couverture" />

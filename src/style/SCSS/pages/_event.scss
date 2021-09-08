@@ -1,17 +1,95 @@
 .event {
     &.pages-background::before {
-        animation: page-home .3s ease forwards;
+        background-color: $primary;
     }
 
-    @keyframes page-home {
-        from {
-            width: 100vw;
-            backdrop-filter: blur(15px);
+    &-main {
+        //TITLE & SUBTITLE
+        .title {
+            &-large {
+                font-size: 2.6rem;
+            }
+
+            &-small {
+                margin-bottom: 40px;
+            }
         }
 
-        to {
-            width: 40vw;
+        //2 BLOCKS
+        &__grid {
+            @media screen and (min-width: 600px) {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+
+        //LEFT BLOCK
+        &__left {
+            width: 35%;
+
+            &>*:not(.title-large, .title-small) {
+                margin: 1.225vw;
+                display: flex;
+
+                //bubble
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: $primary;
+                    border: 1px solid $base-1;
+                    flex-shrink: 0;
+                    margin: 5px 10px 0 0;
+                }
+            }
+        }
+
+        //RIGHT BLOCK
+        &__right {
+            width: 50%;
+            background-color: rgba($primary, .7);
             backdrop-filter: blur(5px);
+
+            //event cover
+            img {
+                width: 100%;
+                height: 380px;
+                object-fit: cover;
+            }
+
+            //contact icons block
+            &--contact {
+                &>div {
+                    display: flex;
+                    align-items: center;
+                    margin: 40px 0 30px 40px;
+
+                    //space between items
+                    &>* {
+                        margin-right: 20px;
+                    }
+                }
+            }
+
+            //description paragraph
+            & > p {
+                margin: 0 40px 40px;
+
+                &>*:not(:last-child) {
+                    margin-bottom: 20px;
+                }
+
+                .component-image {
+                    display: none;
+                }
+
+                a {
+                    border-bottom: 1px solid;
+                }
+            }
+             
         }
     }
 }

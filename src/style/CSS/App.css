@@ -81,6 +81,11 @@ button {
 .title-small:not(.home .title-small) {
   color: #dcb75b;
 }
+.title-xs {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
 
 .card {
   height: auto;
@@ -94,27 +99,33 @@ button {
   -moz-column-gap: 80px;
        column-gap: 80px;
   margin: 60px auto 0;
+  opacity: 0;
   transform: translateY(50px);
   -webkit-animation: card-apparition 2s 2s forwards;
           animation: card-apparition 2s 2s forwards;
 }
 @-webkit-keyframes card-apparition {
-  80% {
+  0% {
+    opacity: 0;
     transform: translateY(50px);
   }
   100% {
+    opacity: 1;
     transform: translateY(-10px);
   }
 }
 @keyframes card-apparition {
-  80% {
+  0% {
+    opacity: 0;
     transform: translateY(50px);
   }
   100% {
+    opacity: 1;
     transform: translateY(-10px);
   }
 }
 .card:not(.home .card) {
+  max-width: 300px;
   margin-bottom: 80px;
 }
 .card-description {
@@ -126,8 +137,28 @@ button {
      object-fit: cover;
 }
 .card img:not(.home .card img) {
-  max-width: 300px;
   margin-top: 20px;
+}
+.card .flex {
+  display: flex;
+}
+.card .flex:not(.home .card .flex) {
+  margin: 0 10px 20px 0;
+  align-items: center;
+}
+.card__like-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19px;
+  height: 19px;
+  background-color: #FEFFFF;
+  color: #9186AF;
+  font-size: 0.8rem;
+}
+.card__like-button:not(.home .card__like-button, .event .card__like-button) {
+  margin-right: 10px;
 }
 
 .nav {
@@ -301,6 +332,12 @@ body {
 .home h2 {
   max-width: 30vw;
 }
+.home > .flex {
+  align-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .home .card {
   display: grid;
   align-items: center;
@@ -335,18 +372,19 @@ body {
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
 }
+.home .card figcaption .flex {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.home .card figcaption .flex .card__like-button {
+  margin-bottom: 10px;
+}
 .home .card figcaption .card-description {
   display: -webkit-box;
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.flex {
-  align-self: end;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .search.pages-background::before {
@@ -378,4 +416,69 @@ body {
     -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
   }
+}
+.event.pages-background::before {
+  background-color: #9186AF;
+}
+.event-main .title-large {
+  font-size: 2.6rem;
+}
+.event-main .title-small {
+  margin-bottom: 40px;
+}
+@media screen and (min-width: 600px) {
+  .event-main__grid {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.event-main__left {
+  width: 35%;
+}
+.event-main__left > *:not(.title-large, .title-small) {
+  margin: 1.225vw;
+  display: flex;
+}
+.event-main__left > *:not(.title-large, .title-small)::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #9186AF;
+  border: 1px solid #FEFFFF;
+  flex-shrink: 0;
+  margin: 5px 10px 0 0;
+}
+.event-main__right {
+  width: 50%;
+  background-color: rgba(145, 134, 175, 0.7);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.event-main__right img {
+  width: 100%;
+  height: 380px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.event-main__right--contact > div {
+  display: flex;
+  align-items: center;
+  margin: 40px 0 30px 40px;
+}
+.event-main__right--contact > div > * {
+  margin-right: 20px;
+}
+.event-main__right > p {
+  margin: 0 40px 40px;
+}
+.event-main__right > p > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+.event-main__right > p .component-image {
+  display: none;
+}
+.event-main__right > p a {
+  border-bottom: 1px solid;
 }

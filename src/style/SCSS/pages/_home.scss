@@ -17,6 +17,13 @@ body {
         max-width: 30vw;
     }
 
+    & > .flex {
+        align-self: end;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .card {
         display: grid;
         align-items: center;
@@ -53,6 +60,16 @@ body {
                 backdrop-filter: blur(1px);
             }
 
+            .flex {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .card__like-button {
+                    margin-bottom: 10px;
+                }
+            }
+
             .card-description {
                 display: -webkit-box;
                 -webkit-line-clamp: 5;
@@ -61,11 +78,4 @@ body {
             }
         }
     }
-}
-
-.flex {
-    align-self: end;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }

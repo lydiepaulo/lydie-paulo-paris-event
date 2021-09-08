@@ -8,7 +8,7 @@ const Search = () => {
     const [eventData, setEventData] = useState(null);
     const [searchValue, setSearchValue] = useState(null);
     const inputRef = useRef();
-    const [errorMessage, setErrorMessage] = useState(null);
+    const [errorMessage, errorHandler] = useState(null);
 
     useEffect(() => {
         if (searchValue) {
@@ -19,7 +19,7 @@ const Search = () => {
                     setEventData(apiResult);
                     console.log(apiResult);
                 })
-                .catch((err) => setErrorMessage('Aucun résultat pour cette recherche'));
+                .catch((err) => errorHandler('Aucun résultat pour cette recherche'));
         }
     }, [searchValue]);
 
@@ -27,30 +27,39 @@ const Search = () => {
         setSearchValue(inputRef.current.value);
     }
 
-    return (
-        <div className="pages-background search">
-            <Navbar />
-            <main className="search-main">
-                <h1 className="title-large">Les évènements<span className="title-logo">À venir</span></h1>
-                <span id="search-bar_container">
-                    <input type="text" ref={inputRef} placeholder="Intitulé de l'évènement" id="search-bar" />
-                </span>
-                <button onClick={changeSearchValue}>Rechercher</button>
+    function onKeyPress(event) {
+        if(event.key === 'Enter'){
+            event.preventDefault()
+            setSearchValue(inputRef.current.value);
+        }
+    }
 
-                <div className="results">{eventData && <h2 className="title-medium">Résultats de la recherche</h2>}
+        return (
+            <div className="pages-background search">
+                <Navbar />
+                <main className="search-main">
+                    <h1 className="title-large">Les évènements<span className="title-logo">À venir</span></h1>
+                    <form>
+                        <span id="search-bar_container">
+                            <input type="text" ref={inputRef} placeholder="Intitulé de l'évènement" id="search-bar" name="search" onKeyPress={onKeyPress} />
+                        </span>
+                        <button type="button" onClick={changeSearchValue}>Rechercher</button>
+                    </form>
 
-                    <div className="card-container">
-                        {/* {errorMessage || eventData && <h2>Résultats de la recherche</h2>} */}
-                        {errorMessage && <p className='error'>{errorMessage}</p>}
-                        {eventData &&
-                            eventData.map((event) => (
-                                <Card key={event.record.id} id={event.record.id} fields={event.record.fields} />
-                        ))}
-                    </div></div>
-            </main>
-            <Border />
-        </div>
-    );
-};
+                    <div className="results">{eventData && <h2 className="title-medium">Résultats de la recherche</h2>}
 
-export default Search;
+                        <div className="card-container">
+                            {/* {errorMessage || eventData && <h2>Résultats de la recherche</h2>} */}
+                            {errorMessage && <p className='error'>{errorMessage}</p>}
+                            {eventData &&
+                                eventData.map((event) => (
+                                    <Card key={event.record.id} id={event.record.id} fields={event.record.fields} />
+                                ))}
+                        </div></div>
+                </main>
+                <Border />
+            </div>
+        );
+    };
+
+    export default Search;
