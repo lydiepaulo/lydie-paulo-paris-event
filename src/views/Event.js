@@ -5,6 +5,7 @@ import LikeButton from '../components/LikeButton';
 import Navbar from '../components/Navbar';
 import EventService from '../services/EventService';
 import parse from 'html-react-parser';
+import GoogleMap from '../components/GoogleMap';
 
 const Event = ({ location }) => {
     const urlId = location.search.replace(/\?/g, "");
@@ -35,29 +36,32 @@ const Event = ({ location }) => {
                                 <h1 className="title-large">{cardData.fields.title}</h1>
                                 <h2 className="title-small">{cardData.fields.contact_name}</h2>
                                 <div>
-                                    <p><span class="title-xs">Dates :</span>
-                                    {parse(`${cardData.fields.date_description}`)}</p>
+                                    <p><span className="title-xs">Dates :</span>
+                                        {parse(`${cardData.fields.date_description}`)}</p>
                                 </div>
                                 <div>
-                                    <p><span class="title-xs">Prix :</span>
-                                    {cardData.fields.price_detail}</p>
+                                    <p><span className="title-xs">Prix :</span>
+                                        {cardData.fields.price_detail}</p>
                                 </div>
                                 <div>
-                                    <p><span class="title-xs">Adresse :</span>
-                                    {cardData.fields.address_name}<br />
-                                    {cardData.fields.address_street}<br />
-                                    {cardData.fields.address_city} {cardData.fields.address_zipcode}</p>
+                                    <p><span className="title-xs">Adresse :</span>
+                                        {cardData.fields.address_name}<br />
+                                        {cardData.fields.address_street}<br />
+                                        {cardData.fields.address_city} {cardData.fields.address_zipcode}</p>
                                 </div>
                                 <div>
-                                    <p><span class="title-xs">Transports :</span>
-                                    {cardData.fields.transport}</p>
+                                    <p><span className="title-xs">Transports :</span>
+                                        {parse((`${cardData.fields.transport}`).replace("\n", "<br />"))}
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className="card-gmap"><span className="title-xs">S'y rendre :</span>
+                                        {/* GOOGLE MAP CARD */}
+                                        {cardData.fields.lat_lon && <GoogleMap coord={cardData.fields.lat_lon} />}
+                                    </p>
                                 </div>
 
-                                {/* <Map
-                                google={google}
-                                zoom={8}
-                                initialCenter={cardData.fields.lat_lon}
-                            /> */}
+
                             </div>
 
                             <div className="event-main__right">
@@ -71,7 +75,7 @@ const Event = ({ location }) => {
                                         <a href={cardData.fields.contact_twitter} target="_blank" rel="noreferrer"><FaTwitter /></a>
                                     </div>
                                 </div>
-                                <p>{parse(`${cardData.fields.description}`)}</p>
+                                <div className="event-main__right--content">{parse(`${cardData.fields.description}`)}</div>
                             </div>
                         </div>
                     </div>
