@@ -1,12 +1,15 @@
-import { /* FaHeart,  */ FaRegHeart } from "react-icons/fa";
+import { FaHeart,  FaRegHeart } from "react-icons/fa";
 
-const LikeButton = (isFavorite) => {
+const LikeButton = ( { isFavorite, updateFavorite } ) => {
+
+  const executeUpdateFavorite = () => {
+    updateFavorite();
+  }
 
   return (
-    <button /* onClick={(e) => setId(e.target.value)} */ className="card__like-button">
-            <FaRegHeart />
-            {/* {!isFavorite && <FaRegHeart />}
-            {isFavorite && <FaHeart />} */}
+    <button onClick={executeUpdateFavorite} className="card__like-button">
+            {!isFavorite && <FaRegHeart />}
+            {isFavorite && <FaHeart />}
     </button>
   );
 };
