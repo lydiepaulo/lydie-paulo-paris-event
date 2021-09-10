@@ -8,19 +8,18 @@
     column-gap: 80px;
     margin: 60px auto 0;
     opacity: 0;
-    transform: translateY(50px);
-    animation: card-apparition 2s 2s forwards;
+    transform: translateY(60px);
   }
 
   @keyframes card-apparition {
     0% {
       opacity: 0;
-      transform: translateY(50px);
+      transform: translateY(60px);
     }
 
     100% {
       opacity: 1;
-      transform: translateY(-10px);
+      transform: translateY(0px);
     }
   }
 
@@ -65,9 +64,7 @@
     align-items: center;
     width: 19px;
     height: 19px;
-    background-color: $base-1;
-    color: $primary;
-    font-size: .8rem;
+    font-size: 1rem;
 
     svg {
       flex-shrink: 0;
@@ -77,4 +74,14 @@
       margin-right: 10px;
     }
   }
+}
+
+
+//FOR SPECIFIC PAGES
+.search .card-container {
+  animation: card-apparition 2s 2s forwards;
+}
+
+.favorites .card-container {
+  animation: card-apparition 2s forwards;
 }

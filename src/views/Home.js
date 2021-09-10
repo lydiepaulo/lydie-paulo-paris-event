@@ -31,7 +31,7 @@ const Home = () => {
                         <p>Découvrir le dernier évènement publié :</p>
                     </div>
                     {lastEvent &&
-                        lastEvent.map((event, index) => (
+                        lastEvent.map((event) => (
                                 <Card key={event.record.id} id={event.record.id} fields={event.record.fields} />
                         ))
                     }

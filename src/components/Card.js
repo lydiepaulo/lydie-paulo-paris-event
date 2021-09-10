@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import LikeButton from './LikeButton';
 import GlobalFunctions from '../services/GlobalFunctions';
+import StorageService from '../services/StorageService';
 
 const Card = ({ id, fields }) => {
     const eventDate = fields.date_start;
@@ -12,10 +13,7 @@ const Card = ({ id, fields }) => {
         const newValue = !isFavorite;
         setIsFavorite(newValue);
 
-
-        let likedIds = localStorage.getItem('lydieProjetFavoris');
-        //s'il n'y en a pas on crée un tableau | s'il y en a, on transforme la string en tableau
-        likedIds = likedIds ? JSON.parse(likedIds) : [];
+        let likedIds = StorageService.myLocalStorage();
 
         if (likedIds.includes(id)) {
             setIsFavorite(true);
@@ -25,7 +23,6 @@ const Card = ({ id, fields }) => {
             //pas encore là : on push l'id + remplit le cœur au clic
             likedIds.push(id);
         }
-
         localStorage.setItem('lydieProjetFavoris', JSON.stringify(likedIds)); //on enregistre dans localstorage
     }
 
@@ -34,15 +31,12 @@ const Card = ({ id, fields }) => {
         let likedIds = localStorage.getItem('lydieProjetFavoris');
         //s'il n'y en a pas on crée un tableau | s'il y en a, on transforme la string en tableau
         likedIds = likedIds ? JSON.parse(likedIds) : [];
-
         if (likedIds.includes(id)) {
             setIsFavorite(true);
         }
-
         if (!likedIds) {
             localStorage.setItem('lydieProjetFavoris', JSON.stringify(likedIds)); //on update le local storage
         }
-
     }, [id])
 
     return (

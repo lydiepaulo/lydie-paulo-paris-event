@@ -8,7 +8,6 @@ const Search = () => {
     const [eventData, setEventData] = useState(null);
     const [searchValue, setSearchValue] = useState(null);
     const inputRef = useRef();
-    const [errorMessage, errorHandler] = useState(null);
 
     useEffect(() => {
         if (searchValue) {
@@ -19,7 +18,6 @@ const Search = () => {
                     setEventData(apiResult);
                     console.log(apiResult);
                 })
-                .catch((err) => errorHandler('Aucun résultat pour cette recherche'));
         }
     }, [searchValue]);
 
@@ -49,8 +47,7 @@ const Search = () => {
                     <div className="results">{eventData && <h2 className="title-medium">Résultats de la recherche</h2>}
 
                         <div className="card-container">
-                            {/* {errorMessage || eventData && <h2>Résultats de la recherche</h2>} */}
-                            {errorMessage && <p className='error'>{errorMessage}</p>}
+                            {eventData && eventData.length === 0 && <p className='error'>Il n'y a aucun résultat pour cette recherche</p>}
                             {eventData &&
                                 eventData.map((event) => (
                                     <Card key={event.record.id} id={event.record.id} fields={event.record.fields} />

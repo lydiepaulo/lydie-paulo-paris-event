@@ -100,28 +100,26 @@ button {
        column-gap: 80px;
   margin: 60px auto 0;
   opacity: 0;
-  transform: translateY(50px);
-  -webkit-animation: card-apparition 2s 2s forwards;
-          animation: card-apparition 2s 2s forwards;
+  transform: translateY(60px);
 }
 @-webkit-keyframes card-apparition {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(60px);
   }
   100% {
     opacity: 1;
-    transform: translateY(-10px);
+    transform: translateY(0px);
   }
 }
 @keyframes card-apparition {
   0% {
     opacity: 0;
-    transform: translateY(50px);
+    transform: translateY(60px);
   }
   100% {
     opacity: 1;
-    transform: translateY(-10px);
+    transform: translateY(0px);
   }
 }
 .card:not(.home .card) {
@@ -152,15 +150,23 @@ button {
   align-items: center;
   width: 19px;
   height: 19px;
-  background-color: #FEFFFF;
-  color: #9186AF;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .card__like-button svg {
   flex-shrink: 0;
 }
 .card__like-button:not(.home .card__like-button, .event .card__like-button) {
   margin-right: 10px;
+}
+
+.search .card-container {
+  -webkit-animation: card-apparition 2s 2s forwards;
+          animation: card-apparition 2s 2s forwards;
+}
+
+.favorites .card-container {
+  -webkit-animation: card-apparition 2s forwards;
+          animation: card-apparition 2s forwards;
 }
 
 .nav {
@@ -311,7 +317,6 @@ input {
 
 button {
   color: #FEFFFF;
-  background-color: #dcb75b;
   font-weight: 600;
 }
 
@@ -394,6 +399,9 @@ body {
   height: 56px;
   margin: 10px 0 40px;
   padding: 0 20px;
+}
+.search-bar__container button {
+  background-color: #dcb75b;
 }
 
 @-webkit-keyframes page-search {

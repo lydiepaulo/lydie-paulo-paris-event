@@ -5,6 +5,7 @@ import Search from './views/Search';
 import Event from './views/Event';
 import Favorites from './views/Favorites';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Errors from './views/Errors';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/search' component={Search} />
           <Route path='/event' component={Event} />
           <Route path='/favorites' component={Favorites} />
+          <Route component={Errors} />
         </Switch>
       </BrowserRouter>
     </div>
