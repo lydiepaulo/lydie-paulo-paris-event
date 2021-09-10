@@ -54,14 +54,15 @@ const Event = ({ location }) => {
                                         {parse((`${cardData.fields.transport}`).replace("\n", "<br />"))}
                                     </p>
                                 </div>
-                                <div>
-                                    <div className="card-gmap"><span className="title-xs">S'y rendre :</span>
-                                        {/* GOOGLE MAP CARD */}
-                                        {cardData.fields.lat_lon && <GoogleMap coord={cardData.fields.lat_lon} />}
-                                    </div>
-                                </div>
-
-
+                                {cardData.fields.lat_lon &&
+                                        <div className="card-gmap">
+                                            {/* GOOGLE MAP CARD */}
+                                            <div>
+                                                <span className="title-xs">S'y rendre :</span>
+                                                <GoogleMap coord={cardData.fields.lat_lon} />
+                                            </div>
+                                        </div>
+                                }
                             </div>
 
                             <div className="event-main__right">
