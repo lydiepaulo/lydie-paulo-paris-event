@@ -39,8 +39,8 @@ const Search = () => {
                 <Navbar />
                 <main className="search-main">
                     <h1 className="title-large">Les évènements<span className="title-logo">À venir</span></h1>
-                    <form>
-                        <span id="search-bar_container">
+                    <form className="search-bar__container">
+                        <span>
                             <input type="text" ref={inputRef} placeholder="Intitulé de l'évènement" id="search-bar" name="search" onKeyPress={onKeyPress} />
                         </span>
                         <button type="button" onClick={changeSearchValue}>Rechercher</button>

@@ -10,12 +10,12 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-      <Switch>
-        <Route path='/' component={Home} exact />
-        <Route path='/search' component={Search} />
-        <Route path='/event' component={Event} />
-        <Route path='/favorites' component={Favorites} />
-      </Switch>
+        <Switch>
+          <Route path='/' component={Home} exact />
+          <Route path='/search' component={Search} />
+          <Route path='/event' component={Event} />
+          <Route path='/favorites' component={Favorites} />
+        </Switch>
       </BrowserRouter>
     </div>
   );

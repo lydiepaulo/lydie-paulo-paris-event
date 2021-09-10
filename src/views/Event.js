@@ -55,10 +55,10 @@ const Event = ({ location }) => {
                                     </p>
                                 </div>
                                 <div>
-                                    <p className="card-gmap"><span className="title-xs">S'y rendre :</span>
+                                    <div className="card-gmap"><span className="title-xs">S'y rendre :</span>
                                         {/* GOOGLE MAP CARD */}
                                         {cardData.fields.lat_lon && <GoogleMap coord={cardData.fields.lat_lon} />}
-                                    </p>
+                                    </div>
                                 </div>
 
 

@@ -1,17 +1,16 @@
-/* import React from 'react';
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { /* FaHeart,  */ FaRegHeart } from "react-icons/fa";
 
-const LikeButton = () => {
-    const click = () => {
-        localStorage.setItem('data','data')
-    }
+const LikeButton = (isFavorite) => {
 
-    return (
-        <button onClick = {click} className="card__like-button">
-            {storedFav && <FaHeart />}
-            {!storedFav && <FaRegHeart />}
-        </button>
-    );
+  return (
+    <button /* onClick={(e) => setId(e.target.value)} */ className="card__like-button">
+            <FaRegHeart />
+            {/* {!isFavorite && <FaRegHeart />}
+            {isFavorite && <FaHeart />} */}
+    </button>
+  );
 };
 
-export default LikeButton; */
+export default LikeButton;
+
+

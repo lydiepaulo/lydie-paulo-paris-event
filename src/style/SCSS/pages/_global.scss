@@ -1,6 +1,6 @@
 .pages-background {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../../assets/homepage-paris.jpg);
     background-size: cover;
     background-position: center;
@@ -15,7 +15,7 @@
         grid-column: 1;
         display: block;
         width: 40vw;
-        height: 100vh;
+        min-height: 100vh;
         backdrop-filter: blur(5px);
         background-color: rgba($base-2, .35);
         z-index: 1;
@@ -26,17 +26,10 @@ main {
     grid-row: 1;
     grid-column: 1;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     padding: 120px 7.5vw 7.5vw;
     z-index: 3;
     overflow: auto;
-}
-
-input,
-button {
-    height: 56px;
-    padding: 0 20px;
-    margin: 10px 0 40px;
 }
 
 input {

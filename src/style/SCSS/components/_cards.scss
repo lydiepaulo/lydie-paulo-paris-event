@@ -60,7 +60,6 @@
 
   //event card : like button
   &__like-button {
-    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +68,10 @@
     background-color: $base-1;
     color: $primary;
     font-size: .8rem;
+
+    svg {
+      flex-shrink: 0;
+    }
 
     &:not(.home .card__like-button, .event .card__like-button) {
       margin-right: 10px;

@@ -147,7 +147,6 @@ button {
   align-items: center;
 }
 .card__like-button {
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,15 +156,22 @@ button {
   color: #9186AF;
   font-size: 0.8rem;
 }
+.card__like-button svg {
+  flex-shrink: 0;
+}
 .card__like-button:not(.home .card__like-button, .event .card__like-button) {
   margin-right: 10px;
 }
 
 .nav {
-  grid-row: 1;
-  grid-column: 1;
+  position: fixed;
   z-index: 4;
   height: 80px;
+  width: 100%;
+  transition: all 0.3s;
+}
+.nav-apparate {
+  background-color: #3b3656;
 }
 .nav-bar {
   display: grid;
@@ -237,8 +243,7 @@ button {
 }
 
 .border {
-  grid-row: 1;
-  grid-column: 1;
+  position: fixed;
   display: grid;
   z-index: 2;
 }
@@ -266,7 +271,7 @@ button {
 
 .pages-background {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url(../../assets/homepage-paris.jpg);
   background-size: cover;
   background-position: center;
@@ -281,7 +286,7 @@ button {
   grid-column: 1;
   display: block;
   width: 40vw;
-  height: 100vh;
+  min-height: 100vh;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
   background-color: rgba(59, 54, 86, 0.35);
@@ -292,17 +297,10 @@ main {
   grid-row: 1;
   grid-column: 1;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   padding: 120px 7.5vw 7.5vw;
   z-index: 3;
   overflow: auto;
-}
-
-input,
-button {
-  height: 56px;
-  padding: 0 20px;
-  margin: 10px 0 40px;
 }
 
 input {
@@ -390,6 +388,12 @@ body {
 .search.pages-background::before {
   -webkit-animation: page-search 0.3s ease forwards;
           animation: page-search 0.3s ease forwards;
+}
+.search-bar__container input,
+.search-bar__container button {
+  height: 56px;
+  margin: 10px 0 40px;
+  padding: 0 20px;
 }
 
 @-webkit-keyframes page-search {

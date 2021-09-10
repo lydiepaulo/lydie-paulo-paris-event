@@ -2,6 +2,15 @@
     &.pages-background::before {
         animation: page-search .3s ease forwards;
     }
+
+    &-bar__container {
+        input,
+        button {
+            height: 56px;
+            margin: 10px 0 40px;
+            padding: 0 20px;
+        }
+    }
 }
 
 @keyframes page-search {
