@@ -7,27 +7,48 @@ body {
 .home {
     &-main {
         display: grid;
+
+        &>.flex {
+            align-self: end;
+            display: flex;
+            justify-content: space-between;
+
+            @include media-max($tablet) {
+                flex-direction: column;
+            }
+
+            &>div:first-child p {
+                @include media-min($tablet) {
+                    margin-right: 50px;
+                }
+            }
+
+        }
     }
 
-    .title-logo {
-        margin-left: -12px;
-    }
+    @include media-min($tablet) {
+        .title-xl {
+            margin-left: -12px;
+        }
 
-    h2 {
-        max-width: 30vw;
-    }
-
-    & > .flex {
-        align-self: end;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        h2 {
+            max-width: 30vw;
+            min-width: 400px;
+        }
     }
 
     .card {
         display: grid;
         align-items: center;
-        width: 500px;
+
+        @include media-max($tablet) {
+            width: 100%;
+        }
+
+        @include media-min($tablet) {
+            width: 500px;
+        }
+
         margin-left: auto;
 
         &>* {
@@ -37,7 +58,15 @@ body {
 
         figcaption,
         img {
-            width: 500px;
+            @include media-max($tablet) {
+                width: 100%;
+                margin-top: 50px;
+            }
+
+            @include media-min($tablet) {
+                width: 500px;
+            }
+
             height: 280px;
             overflow: hidden;
         }

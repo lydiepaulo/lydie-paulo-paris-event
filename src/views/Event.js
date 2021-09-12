@@ -17,7 +17,6 @@ const Event = ({ location }) => {
                 .then((apiResult) => {
                     setCardData(apiResult);
                 });
-            /* .catch((err) => errorHandler('Aucun résultat pour cette recherche')); */
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -55,13 +54,13 @@ const Event = ({ location }) => {
                                     </p>
                                 </div>
                                 {cardData.fields.lat_lon &&
-                                        <div className="card-gmap">
-                                            {/* GOOGLE MAP CARD */}
-                                            <div>
-                                                <span className="title-xs">S'y rendre :</span>
-                                                <GoogleMap coord={cardData.fields.lat_lon} />
-                                            </div>
+                                    <div className="card-gmap">
+                                        {/* GOOGLE MAP CARD */}
+                                        <div>
+                                            <span className="title-xs">S'y rendre :</span>
+                                            <GoogleMap coord={cardData.fields.lat_lon} />
                                         </div>
+                                    </div>
                                 }
                             </div>
 
@@ -69,7 +68,7 @@ const Event = ({ location }) => {
                                 <img src={cardData.fields.cover.url} alt="Évènement" />
                                 <div className="event-main__right--contact">
                                     <div>
-                                        <LikeButton />
+                                        <LikeButton id={cardData.id} />
                                         {cardData.fields.contact_phone && <span><a href={`tel:${cardData.fields.contact_phone}`}><FaPhoneAlt /></a></span>}
                                         {cardData.fields.contact_mail && <span><a href={`mailto:${cardData.fields.contact_mail}`}><FaEnvelope /></a></span>}
                                         <a href={cardData.fields.contact_facebook} target="_blank" rel="noreferrer"><FaFacebookF /></a>

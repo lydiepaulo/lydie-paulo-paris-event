@@ -29,7 +29,7 @@ export class MapContainer extends Component {
         return (
             <Map
                 zoom={11}
-                style={{ height: '150px', width: '25vw' }}
+                className="gmap"
                 initialCenter={{ lat: this.props.coord.lat, lng: this.props.coord.lon }}
                 google={this.props.google}
                 onClick={this.onMapClicked}>

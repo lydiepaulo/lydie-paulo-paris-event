@@ -10,20 +10,22 @@ const Favorites = () => {
 
     let likedIds = StorageService.myLocalStorage();
 
+    //GET DATA FROM THE API
     function fetchProfileData() {
         return Promise.all(likedIds.map((id) => EventService.fetchId(id).then((response) => response)))
-        .then((data) => {
-            return data;
-        });
+            .then((data) => {
+                return data;
+            });
     }
 
-useEffect(() => {
-    const useFetchProfileData = fetchProfileData();
-    useFetchProfileData.then((data) => {
-        setMyFavorites(data)
-    })
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
+    //DISPLAY THE FAVORITES
+    useEffect(() => {
+        const useFetchProfileData = fetchProfileData();
+        useFetchProfileData.then((data) => {
+            setMyFavorites(data)
+        })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     return (
         <div className="pages-background favorites">

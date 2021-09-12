@@ -14,11 +14,36 @@
         grid-row: 1;
         grid-column: 1;
         display: block;
-        width: 40vw;
+
+        @include media-max($tablet) {
+            width: 100vw;
+        }
+
+        @include media-min($tablet) {
+            width: 40vw;
+        }
+
         min-height: 100vh;
         backdrop-filter: blur(5px);
         background-color: rgba($base-2, .35);
         z-index: 1;
+    }
+}
+
+.search.pages-background::before,
+.favorites.pages-background::before {
+    animation: page-search .3s ease forwards;
+}
+
+@keyframes page-search {
+    from {
+        width: 40vw;
+        backdrop-filter: blur(5px);
+    }
+
+    to {
+        width: 100vw;
+        backdrop-filter: blur(15px);
     }
 }
 
@@ -32,6 +57,10 @@ main {
     overflow: auto;
 }
 
+.errors-container {
+    font-size: 1.3rem;
+}
+
 input {
     color: $base-3;
     width: 230px;
@@ -42,3 +71,21 @@ button {
     color: $base-1;
     font-weight: 600;
 }
+
+.smooth-apparition {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: smooth-apparition 2s forwards;
+}
+
+@keyframes smooth-apparition {
+    0% {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }

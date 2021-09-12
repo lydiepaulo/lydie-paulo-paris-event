@@ -4,21 +4,32 @@
         font-size: 1.5rem;
         text-transform: uppercase;
 
-        .title-logo {
+        @include media-min($tablet) {
+            font-size: 1.2rem;
+        }
+
+        .title-xl {
             display: block;
             font-weight: 200;
-            font-size: 8rem;
-            line-height: 8rem;
             margin-bottom: 10px;
+
+            @include media-max($tablet) {
+                font-size: 3rem;
+            }
+
+            @include media-min($tablet) {
+                font-size: 8rem;
+                line-height: 8rem;
+            }
         }
     }
 
     &-medium {
         align-items: center;
-        font-size: 1.8rem;
         font-weight: 300;
         margin: 20px 0 20px -1px;
-
+        font-size: 1.6rem;
+            
         &::after {
             content: '';
             display: block;
@@ -33,7 +44,7 @@
         font-size: 1.4rem;
         font-weight: 300;
         margin-bottom: 20px;
-        
+
         &:not(.home .title-small) {
             color: $secondary;
         }

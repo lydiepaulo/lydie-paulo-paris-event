@@ -21,12 +21,12 @@ const Home = () => {
             <Navbar />
             <main className="home-main">
                 <div>
-                    <h1 className="title-large">Bienvenue sur<span className="title-logo">Paris Events</span></h1>
+                    <h1 className="title-large">Bienvenue sur<span className="title-xl">Paris Events</span></h1>
                     <h2>L'application qui permet de chercher en direct les prochains évènements parisiens</h2>
                 </div>
 
                 <div className="flex">
-                    <div>
+                    <div className="smooth-apparition">
                         <h3 className="title-medium">Actualité</h3>
                         <p>Découvrir le dernier évènement publié :</p>
                     </div>
