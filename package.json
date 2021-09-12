@@ -1,5 +1,5 @@
 {
-  "homepage": "https://lydiepaulo.github.io/lydie-paulo-paris-event/",
+  "homepage": "https://lydiepaulo.github.io/lydie-paulo-paris-event",
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
@@ -23,7 +23,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
