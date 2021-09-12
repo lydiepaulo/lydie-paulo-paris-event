@@ -489,6 +489,12 @@ body {
   }
 }
 @media (min-width: 1025px) {
+  .event-main .logo {
+    background-color: #FEFFFF;
+    padding: 5px;
+  }
+}
+@media (min-width: 1025px) {
   .event-main .title-large {
     font-size: 2.6rem;
   }
