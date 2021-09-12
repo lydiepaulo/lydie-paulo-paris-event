@@ -12,15 +12,15 @@ const Navbar = () => {
     <nav className="nav" id="nav">
       <ul className="nav-bar">
         <li className="nav-bar__home">
-          <NavLink exact to="/lydie-paulo-paris-event/">
+          <NavLink exact to="/">
             <img src={favicon} alt="favicon" className="logo" />
           </NavLink>
         </li>
         <li>
-          <NavLink exact to="/lydie-paulo-paris-event/search" activeClassName="nav-bar__active">Rechercher</NavLink>
+          <NavLink exact to="/search" activeClassName="nav-bar__active">Rechercher</NavLink>
         </li>
         <li>
-          <NavLink exact to="/lydie-paulo-paris-event/favorites" activeClassName="nav-bar__active">Favoris</NavLink>
+          <NavLink exact to="/favorites" activeClassName="nav-bar__active">Favoris</NavLink>
         </li>
       </ul>
     </nav>
