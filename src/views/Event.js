@@ -71,8 +71,8 @@ const Event = ({ location }) => {
                                         <LikeButton id={cardData.id} />
                                         {cardData.fields.contact_phone && <span><a href={`tel:${cardData.fields.contact_phone}`}><FaPhoneAlt /></a></span>}
                                         {cardData.fields.contact_mail && <span><a href={`mailto:${cardData.fields.contact_mail}`}><FaEnvelope /></a></span>}
-                                        <a href={cardData.fields.contact_facebook} target="_blank" rel="noreferrer"><FaFacebookF /></a>
-                                        <a href={cardData.fields.contact_twitter} target="_blank" rel="noreferrer"><FaTwitter /></a>
+                                        {cardData.fields.contact_mail && <span><a href={cardData.fields.contact_facebook} target="_blank" rel="noreferrer"><FaFacebookF /></a></span>}
+                                        {cardData.fields.contact_mail && <span><a href={cardData.fields.contact_twitter} target="_blank" rel="noreferrer"><FaTwitter /></a></span>}
                                     </div>
                                 </div>
                                 <div className="event-main__right--content">{parse(`${cardData.fields.description}`)}</div>
