@@ -18,7 +18,7 @@ const Favorites = () => {
             });
     }
 
-    //DISPLAY THE FAVORITES
+    //DISPLAY CARDS
     useEffect(() => {
         const useFetchProfileData = fetchProfileData();
         useFetchProfileData.then((data) => {
