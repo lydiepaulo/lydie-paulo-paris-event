@@ -249,6 +249,10 @@ button {
   height: 1px;
 }
 
+.logo {
+  width: 36px;
+}
+
 .pages-background {
   width: 100vw;
   min-height: 100vh;

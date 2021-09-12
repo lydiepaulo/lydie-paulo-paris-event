@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import GlobalFunctions from '../services/GlobalFunctions';
+import favicon from '../assets/favicon.png'
 
 const Navbar = () => {
   useEffect(() => {
@@ -12,7 +13,7 @@ const Navbar = () => {
       <ul className="nav-bar">
         <li className="nav-bar__home">
           <NavLink exact to="/">
-            Paris Event
+            <img src={favicon} alt="favicon" className="logo" />
           </NavLink>
         </li>
         <li>
