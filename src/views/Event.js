@@ -64,7 +64,7 @@ const Event = ({ location }) => {
                                 }
                             </div>
 
-                            <div className="event-main__right">
+                            <div className="event-main__right smooth-apparition">
                                 <img src={cardData.fields.cover.url} alt="Évènement" />
                                 <div className="event-main__right--contact">
                                     <div>

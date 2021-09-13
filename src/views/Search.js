@@ -44,10 +44,10 @@ const Search = () => {
                         <button type="button" onClick={changeSearchValue}>Rechercher</button>
                     </form>
 
-                    <div className="results">{eventData && <h2 className="title-medium">Résultats de la recherche</h2>}
+                    <div className="results">{eventData && <h2 className="title-medium smooth-apparition">Résultats de la recherche</h2>}
 
                         <div className="card-container">
-                            {eventData && eventData.length === 0 && <p className='error'>Il n'y a aucun résultat pour cette recherche</p>}
+                            {eventData && eventData.length === 0 && <p className="error smooth-apparition">Il n'y a aucun résultat pour cette recherche</p>}
                             {eventData &&
                                 eventData.map((event) => (
                                     <Card key={event.record.id} id={event.record.id} fields={event.record.fields} />
