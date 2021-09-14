@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/lydie-paulo-paris-event/static/css/main.276ec052.chunk.css",
-    "main.js": "/lydie-paulo-paris-event/static/js/main.28d57be2.chunk.js",
-    "main.js.map": "/lydie-paulo-paris-event/static/js/main.28d57be2.chunk.js.map",
+    "main.css": "/lydie-paulo-paris-event/static/css/main.d562f87e.chunk.css",
+    "main.js": "/lydie-paulo-paris-event/static/js/main.a88177ee.chunk.js",
+    "main.js.map": "/lydie-paulo-paris-event/static/js/main.a88177ee.chunk.js.map",
     "runtime-main.js": "/lydie-paulo-paris-event/static/js/runtime-main.b1c61c10.js",
     "runtime-main.js.map": "/lydie-paulo-paris-event/static/js/runtime-main.b1c61c10.js.map",
     "static/js/2.e784ca47.chunk.js": "/lydie-paulo-paris-event/static/js/2.e784ca47.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.3a74fa32.chunk.js": "/lydie-paulo-paris-event/static/js/3.3a74fa32.chunk.js",
     "static/js/3.3a74fa32.chunk.js.map": "/lydie-paulo-paris-event/static/js/3.3a74fa32.chunk.js.map",
     "index.html": "/lydie-paulo-paris-event/index.html",
-    "static/css/main.276ec052.chunk.css.map": "/lydie-paulo-paris-event/static/css/main.276ec052.chunk.css.map",
+    "static/css/main.d562f87e.chunk.css.map": "/lydie-paulo-paris-event/static/css/main.d562f87e.chunk.css.map",
     "static/js/2.e784ca47.chunk.js.LICENSE.txt": "/lydie-paulo-paris-event/static/js/2.e784ca47.chunk.js.LICENSE.txt",
     "static/media/App.css": "/lydie-paulo-paris-event/static/media/homepage-paris.33d0d526.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.b1c61c10.js",
     "static/js/2.e784ca47.chunk.js",
-    "static/css/main.276ec052.chunk.css",
-    "static/js/main.28d57be2.chunk.js"
+    "static/css/main.d562f87e.chunk.css",
+    "static/js/main.a88177ee.chunk.js"
   ]
 }
