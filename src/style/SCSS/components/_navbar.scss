@@ -1,14 +1,35 @@
 .nav {
     position: fixed;
     z-index: 4;
-    height: 80px;
     width: 100%;
     transition: all .3s;
 
+    @include media-max($mobile) {
+        bottom: 0;
+        height: 50px;
+        background-color: $base-2;
+        box-shadow: 0px -15px 20px -15px $base-2;
+    }
+
+    @include media-min($mobile) {
+        height: 80px;
+    }
+
     &-apparate {
         background-color: $base-2;
+        box-shadow: 0px 15px 40px -15px $base-2;
     }
-    
+
+    &-logo {
+        @include media-max($mobile) {
+            width: 30px;
+        }
+
+        @include media-min($mobile) {
+            width: 36px;
+        }
+    }
+
     &-bar {
         display: grid;
         grid-template-columns: 1fr repeat(2, auto);
@@ -16,13 +37,22 @@
         align-items: center;
         height: 100%;
         padding: 0 7.5vw;
-        font-size: .8rem;
+
+        @include media-max($mobile) {
+            font-size: .75rem;
+        }
+
+        @include media-min($mobile) {
+            font-size: .8rem;
+        }
+
         text-transform: uppercase;
 
         //page on display
         &__active::after {
             animation: activelink .3s forwards;
         }
+
         @keyframes activelink {
             from {
                 width: 0;
@@ -65,9 +95,9 @@
             }
 
             &:hover::before {
-                background-color: $secondary;                
+                background-color: $secondary;
             }
-            
+
             &:first-child {
                 color: $secondary;
             }

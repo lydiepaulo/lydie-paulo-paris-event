@@ -1,7 +1,3 @@
-.logo {
-    width: 36px;
-}
-
 .pages-background {
     width: 100vw;
     min-height: 100vh;
@@ -56,7 +52,13 @@ main {
     grid-column: 1;
     width: 100vw;
     min-height: 100vh;
-    padding: 120px 7.5vw 7.5vw;
+    @include media-max($mobile) {
+        padding: 60px 7.5vw 100px;
+    }
+
+    @include media-min($mobile) {
+        padding: 120px 7.5vw 7.5vw;
+    }
     z-index: 3;
     overflow: auto;
 }

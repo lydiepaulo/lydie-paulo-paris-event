@@ -13,7 +13,7 @@ const Navbar = () => {
       <ul className="nav-bar">
         <li className="nav-bar__home">
           <NavLink exact to="/">
-            <img src={favicon} alt="favicon" className="logo" />
+            <img src={favicon} alt="favicon" className="nav-logo" />
           </NavLink>
         </li>
         <li>
