@@ -179,11 +179,20 @@ button {
 .nav-bar {
   display: grid;
   grid-template-columns: 1fr repeat(2, auto);
-  gap: 30px;
   align-items: center;
   height: 100%;
   padding: 0 7.5vw;
   text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  .nav-bar {
+    gap: 22px;
+  }
+}
+@media (min-width: 481px) {
+  .nav-bar {
+    gap: 30px;
+  }
 }
 @media (max-width: 480px) {
   .nav-bar {

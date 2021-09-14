@@ -33,7 +33,13 @@
     &-bar {
         display: grid;
         grid-template-columns: 1fr repeat(2, auto);
-        gap: 30px;
+        @include media-max($mobile) {
+            gap: 22px;
+        }
+
+        @include media-min($mobile) {
+            gap: 30px;
+        }
         align-items: center;
         height: 100%;
         padding: 0 7.5vw;
