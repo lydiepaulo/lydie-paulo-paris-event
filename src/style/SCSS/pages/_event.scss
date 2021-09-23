@@ -6,7 +6,7 @@
     }
 
     @include media-min($desktop) {
-        .logo {
+        .nav-logo {
             background-color: $base-1;
             padding: 5px;
         }
