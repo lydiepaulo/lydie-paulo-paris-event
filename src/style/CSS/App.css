@@ -570,7 +570,7 @@ body {
   }
 }
 @media (min-width: 1025px) {
-  .event .logo {
+  .event .nav-logo {
     background-color: #FEFFFF;
     padding: 5px;
   }
