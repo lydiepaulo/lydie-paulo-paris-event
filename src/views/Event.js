@@ -15,6 +15,7 @@ const Event = ({ location }) => {
         if (urlId) {
             EventService.fetchId(urlId)
                 .then((apiResult) => {
+                    console.log(apiResult)
                     setCardData(apiResult);
                 });
         }
@@ -36,11 +37,11 @@ const Event = ({ location }) => {
                                 <h2 className="title-small">{cardData.fields.contact_name}</h2>
                                 <div>
                                     <p><span className="title-xs">Dates :</span>
-                                        {parse(`${cardData.fields.date_description}`)}</p>
+                                        {cardData.fields.date_description && parse(`${cardData.fields.date_description}`)}</p>
                                 </div>
                                 <div>
                                     <p><span className="title-xs">Prix :</span>
-                                        {cardData.fields.price_detail}</p>
+                                        {cardData.fields.price_detail && parse((`${cardData.fields.price_detail}`).replace("\n", "<br />"))}</p>
                                 </div>
                                 <div>
                                     <p><span className="title-xs">Adresse :</span>
@@ -50,7 +51,7 @@ const Event = ({ location }) => {
                                 </div>
                                 <div>
                                     <p><span className="title-xs">Transports :</span>
-                                        {parse((`${cardData.fields.transport}`).replace("\n", "<br />"))}
+                                        {cardData.fields.transport && parse((`${cardData.fields.transport}`).replace("\n", "<br />"))}
                                     </p>
                                 </div>
                                 {cardData.fields.lat_lon &&
@@ -65,7 +66,7 @@ const Event = ({ location }) => {
                             </div>
 
                             <div className="event-main__right smooth-apparition">
-                                <img src={cardData.fields.cover.url} alt="Évènement" />
+                                <img src={cardData.fields.cover_url} alt="Évènement" />
                                 <div className="event-main__right--contact">
                                     <div>
                                         <LikeButton id={cardData.id} />

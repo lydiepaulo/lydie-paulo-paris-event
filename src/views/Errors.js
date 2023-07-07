@@ -9,7 +9,7 @@ const Errors = () => {
             <main>
                 <h1 className="title-large">
                     Oops !
-                    <div class="title-xl">404</div>
+                    <div className="title-xl">404</div>
                 </h1>
                 <div className="errors-container smooth-apparition">
                     <p>Il semblerait que vous vous soyez perdu·e…</p>

@@ -14,6 +14,7 @@ const Favorites = () => {
     function fetchFavoritesData() {
         return Promise.all(likedIds.map((id) => EventService.fetchId(id).then((response) => response)))
             .then((data) => {
+                data = data.filter(e => e)
                 return data;
             });
     }
